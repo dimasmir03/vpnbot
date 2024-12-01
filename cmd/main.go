@@ -9,11 +9,15 @@ import (
 )
 
 func main() {
-	configPath := "./config/config.yaml"
-	cfg, err := config.LoadConfig(configPath)
+	cfg, err := config.LoadConfig("config/config.yaml")
 	if err != nil {
-		log.Fatalf("failed load config: %v", err)
+		log.Fatalf("Failed to load config: %v", err)
 	}
+
+	apiClient := internal.NewAPIClient(cfg.APIBaseURL, cfg.APILogin, cfg.APIPassword)
+	// if err != nil {
+	// 	log.Fatalf("Failed to initialize API client: %v", err)
+	// }
 
 	pref := telebot.Settings{
 		Token: cfg.TelegramBotToken,
@@ -27,8 +31,9 @@ func main() {
 		log.Fatalf("Failed create bot: %v", err)
 	}
 
-	internal.SetupHandlers(bot, cfg)
+	internal.SetupHandlers(bot, apiClient)
 
 	log.Println("Bot is running...")
 	bot.Start()
+
 }

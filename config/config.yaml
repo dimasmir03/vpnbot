@@ -1,5 +1,7 @@
 telegram_token: "7261016033:AAHjZs-8CfXmvygHmncveDkx3JjARsDGj9c"
-api_base_url: "http://127.0.0.1:52789/FANo8CjhbNS2Fk8"
+api_base_url: "http://38.180.162.180:15972/FANo8CjhbNS2Fk8"
+login: "hVRyaEKR1a"
+password: "NynYoiGsKe"
 admin_users:
 # ID администратора Telegram
   - 670348974

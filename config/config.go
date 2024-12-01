@@ -11,6 +11,8 @@ type Config struct {
 	TelegramBotToken string  `yaml:"telegram_token"`
 	APIBaseURL       string  `yaml:"api_base_url"`
 	AdminUsers       []int64 `yaml:"admin_users"`
+	APILogin         string  `yaml:"login"`
+	APIPassword      string  `yaml:"password"`
 }
 
 func LoadConfig(path string) (*Config, error) {
