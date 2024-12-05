@@ -13,6 +13,7 @@ type Config struct {
 	AdminUsers       []int64 `yaml:"admin_users"`
 	APILogin         string  `yaml:"login"`
 	APIPassword      string  `yaml:"password"`
+	DatabaseURL      string  `yaml:"database_url"`
 }
 
 func LoadConfig(path string) (*Config, error) {
